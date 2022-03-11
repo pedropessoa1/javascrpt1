@@ -1,2 +1,2 @@
 # javascrpt1
- JavaScrpt
+ Apredendo JavaScrpt
