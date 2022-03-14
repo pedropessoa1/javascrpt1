@@ -1,0 +1,784 @@
+Conhecendo o VS Code: 
+
+Podemos criar pastas e arquivos pelo VS Code
+instalamos a extenção Code Runner e habilitar o auto save
+habilitar para sempre mostrar a última execução, sem mostrar as anteriores nas settings da extenção
+Duplicar A linha: alt + shift + seta para baixo
+Excluir a linha: ctlr + x
+Substituir a palavra ctrl + d 
+
+JavaScript: 
+
+Sentença de Código & Bloco de código
+Sentenças:
+Em analogia, as sentenças são as frases, já os blocos, os parágrafos
+No JavaScript, a sentença pode ou não terminar com ; 
+o ; mostra que e sentença terminou
+para escrever cometários usa-se //  ou /* Para comentários de mais de uma linha */
+
+Para mostrar na tela, o comendo é:
+console.log("Teste") //Aspas duplas ou aspas simples
+console.log(1) //Sem aspas
+console.log(1+3) //sem aspas
+console.log(a, b) //variáveis
+
+Blocos de código:
+Um bloco é definido por um par de chaves
+{
+    sentença;
+    sentença;
+}
+Pode-se criar um bloco dentro do outro
+{
+    {
+        sentenças;
+    }
+}
+O VS Code pode suprimir os blocos
+Os blocos podem ser vazios ou só com ;
+Os códigos são organizados em: Pastas, arquivos, blocos e sentenças
+
+Trabalhando com dados:
+As casas decimais são separadas por . e não por virgula
+Letras maiúsculas e minúsculas Importam!
+var, let, const
+é melhor para a saúde do programa ter mais constantes do que variáveis
+O let é mais moderno e o const não se altera. Geralmente consts são em letra maiúscula, mas não tem regra
+var identificador = valor ou var identificador;
+
+variáveis: 
+var nome = "Caneta"
+var quantidade = 10
+var preco = 6.4
+var imposto = 1.5
+console.log(quantidade) 
+console.log(preco)
+console.log(imposto)
+console.log(preco+imposto)
+nome = "Caneta Bic"  // Mudando o valor
+console.log(nome)
+//
+Exemplo 2:
+let preco = 19.90
+let desconto = 0.4
+let preco_com_desconto = preco * (1 - desconto)
+console.log(preco_com_desconto)
+//
+Exemplo 3:
+let nome = "caderno"
+let categoria = "Papelaria"
+console.log("Produto "+ nome + " categoria "+ categoria)
+
+tipos:
+Usamos o typeof para saber o tipo
+O JavaScript não faz diferenciação entre inteiros e decimais
+number, string, boolean...
+
+Para saber o tipo:
+let EstaChovendo = true // ou false
+console.log(typeof EstaChovendo)
+console.log(typeof "teste")
+
+Tecnica de troca de valores:
+let a = 7
+let b = 94
+[a, b] = [b, a] // faz a troca dos valores
+console.log(a)
+console.log(b)
+
+Estrutura de dados:
+Estrutura de dados != de dados
+Visa organizar e administrar os dados exemplo: uma lista
+FIFO: First in, first out - É como uma fila, o primeiro a entrar, é o primeiro a sair
+LIFO: Lest in, First out - O último a entrar, é o primeiro a sair
+Árvores: Exemplo: Os diretórios
+As estruturas podem ser personalizadas
+
+Executando JacaScript:
+repl.it no navegador
+JSFiddle no navegador
+No console do chrome (f12) eu posso usar as bibliotecas que foram usadas no site. Ex: jQuery no site jquery.com
+
+Tipagem fraca:
+Tipagem é como a linguagem vai ligar com os tipos de dados
+Tipagem fraca (ou dinâmica) quer dizer que em uma variável eu posso colocar tipos diferentes
+
+Tipo Number:
+
+Para passar string para number:
+Number('2.0')
+
+Para passar number para string:
+media.toString()
+String(2)//no lugar do 2, o número
+
+Para passar number para string no valor binario:
+media.toString(2)
+
+
+Para saber se é inteiro:
+Number.isInteger(variaveldonumero) // retorna true ou false
+
+Para limitar as casas decimais:
+media.toFixed(2)
+
+Alguns cuidados com o number:
+
+console.log(7/0) //Dá infinito
+console.log('10/2') //Ele faz a operação e de fato da 5
+console.log(0.1 + 0.7)//Não dá 0.8, dá 0.79999999999999
+console.log(10.toString()) //dá erro pois é um numero literal, o 10 tem que está em parênteses
+
+Usando Math:
+É um objeto
+
+Exponenciação:
+Math.pow(raio, 2)//M maiúsculo. O 2 é o expoente, ou seja; ao quadrado
+
+Tipo String:
+Cadeia de carecteres
+Tipos de delimitação: "",'',´´
+Tratamento de strings
+
+Mostrar a letra correspondente à posição:
+const escola = 'cod3r'
+escola.charAt(4) //Esse 4 é o Índice (Lembrando que o primeiro é o 0)
+escola.charCodeAt(3)//Valor na tabela ask
+
+Para saber em que posição/índice está a letra:
+escola.indexOf('r')
+
+Para imprimir do índice desejado para frente ou até antes do índice determinado:
+escola.substring(1)//imprime od3r, pq imprime do 1 para frente. Inclui o 1
+escola.substring(0, 3)//cod não inclui o 3
+
+concatenar:
+console.log('escola'.concat(escola).concat("!"))
+
+
+Para substituir o valor de um índice REPLACE:
+console.log(escola.replace(3, 'e'))// troca o índice 3 por e
+console.log(escola.replace('r, 'e'))// troca a letra r por e
+
+criar array:
+'ana,maria,pedro'.split(',')// a , é o separador. o que vai indicar que vai separar as palavras para os elementos do array 
+
+Template Strings:
+Usa-se Crase
+
+Interpolação:
+const nome = 'rebeca'
+const concatenacao = 'olá '+ nome +'!'
+const template = `olá ${nome}!`
+console.log(concatenacao, template)
+
+Tipo Boolean:
+Verdadeiro ou Falso
+true ou false
+0 ou 1
+
+let isATIVO = 1
+console.log(!!isATIVO) // não não (exclamações) verdadeiro
+
+let isATIVO = 1
+console.log(!isATIVO) // não (exclamações) falso
+
+let nome = ""
+console.log(nome || 'desconhecido') //retorna desconhecido
+
+let nome = "João"
+console.log(nome || 'desconhecido') //retorna João
+
+Array:
+Agrupar múltiplos valores, de modo linear. Vetor
+Acessado pelo Índice
+Não tem tamanho fixo. É heterogêneo
+Não misture os conteúdos
+
+Criando array:
+const valores = [7.7,8.9,6.3,9.2]
+console.log(valores[0],valores[3])
+valores[4] = 10
+console.log(valores[4])
+
+Quantidade de elementos:
+console.log(valores.length)
+
+Excluir o último elemento:
+console.log(valores.pop())
+
+Tipo Object:
+Não é a mesma coisa que json
+Cria-se com {}
+É uma coleção de pares chave-valor 
+Quando omite a chave do objeto, o js(a partir do ecmascrypt 2015, já cria sozinho )
+
+Criando objeto:
+const prod1 = {}
+prod1.nome = 'celular ultra mega'
+prod1.preco = 4998.90
+console.log(prod1)
+
+exemplo 2:
+prod1['Desconto legal'] = 0.40 // evitar essa forma
+
+exemplo 3:
+const prod2 = {
+    nome: 'camisa polo',
+    preço: 79.90
+}
+
+Null & Undefined:
+Pode fazer referencia ao ponteiro ou usar o tipo primitivo
+o null limpa o ponteiro
+não usar o undefined, é melhor usar o null
+
+removendo atributo:
+delete produto.preco
+
+Funções:
+Pode não receber parâmetro, não ter retorno, etc.
+
+Criando função sem retorno:
+function imprimirSoma(a, b){
+    console.log(a+b)
+}
+imprimirSoma(2, 3)
+
+Criando função com retorno:
+function soma(a, b = 0){ // se não colocar nada, o b por padrão fica 0
+    return a + b
+}
+console.log(soma(2, 3)) // tem que ser no console para printar o valor
+
+Armazenando uma função em uma variável:
+const imprimirSoma = function(a, b){
+    console.log(a+b)
+}
+imprimirSoma(2, 3)
+
+Armazenando uma função arrow em uma variável:
+const soma = (a,b) => {
+    return a+b
+}
+console.log(soma(2,3))
+
+Função de sorteio:
+function getInteiroAleatorioEntre(min, max){
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor)
+}
+
+
+Retorno implícito:
+const subtracao = (a, b) => a-b
+console.log(subtracao(5,3))
+
+exemplo 2:
+const imprimir2 = a => console.log(a)
+imprimir2('Legall')
+
+Var:
+FUJA DO ESCOPO GLOBAL
+A variável var mesmo dentro de um bloco, ficará visível fora do bloco(Excerto função)
+Vai para o escopo global
+Ou é global ou é no escopo de função
+
+Let:
+Escopo global,escopo de função e escopo de bloco
+
+Var em loop:
+for (var i = 0; i < 10; i++){
+    console.log(i)
+}
+console.log('i = ', i)//ele imprime 10
+
+exemplo 2:
+const funcs = []
+for (var i = 0; i < 10; i++){
+    funcs.push(function(){
+        console.log(i)
+    })
+}
+funcs[2]()
+funcs[8]()
+
+
+Let em loop:
+for (let i = 0; i < 10; i++){
+    console.log(i)
+}
+console.log('i = ', i)//da erro
+
+exemplo 2:
+const funcs = []
+for (let i = 0; i < 10; i++){
+    funcs.push(function(){
+        console.log(i)
+    })
+}
+funcs[2]()
+funcs[8]()
+
+Hoisting:
+Içar
+Quando usa o var, pode ocorrer o hoisting
+console.log('a = ', a)
+var a = 2
+console.log('a = ', a)
+ele não da erro
+var a
+console.log('a = ', a)
+a = 2
+console.log('a = ', a)
+ele implicitamente fez isso
+
+Par nome/valor:
+Contexto léxico 1 é em que local físico do código o par chave/valor foi definido
+
+Operadores:
+Atribuição - Sempre o símbolo da atribuição vem antes
+
+Atribuição aditiva:
+b += a // b = b + a
+
+Atribuição subtrativa:
+b -= 4 // b = b - 4 
+
+Atribuição multiplicativa:
+b *= 2 // b = b * 2
+
+Atribuição divisiva:
+b /= 2 // b = b / 2
+
+Atribuição modular:
+b %= 2 // b = b % 2
+
+Destructuring - Desestruturação; Tira algum elemento da estrutura
+no objeto usa {} e no array usa []
+const pessoa = {
+    nome: 'ana',
+    idade: 5,
+    endereco: {
+        logradouro: 'rua abc',
+        numero: 1000
+    }
+}
+
+Extraindo os atributos do objeto:
+cconst {nome, idade} = pessoa
+console.log(nome, idade)
+
+Colocando os atributos do objeto extraídos em variáveis:
+const{nome: n,idade: i} = pessoa
+console.log(n, i)
+
+Objeto do objeto:
+const { endereco: {logradouro,numero}} = pessoa
+console.log(logradouro, numero)
+
+Desestruturação de array:
+const [a] = [10]
+console.log(a)
+
+exemplo 2:
+const [n1, ,n3, ,n5,n6 = 0] = [10, 7, 9, 8]
+console.log(n1, n3, n5, n6)
+
+Destructuring em função com objeto como parâmetro:
+function rand({min = 0, max = 1000}){
+    const valor = Math.random() * (max-min) + min
+    return Math.floor(valor)
+}
+console.log(rand({max: 50, min: 40}))
+console.log(rand({min: 955}))
+console.log(rand({}))
+
+Destructuring em função com array como parâmetro:
+function rand([min = 0, max = 1000]){
+    if (min>max) [min,max] = [max, min]
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor) 
+}
+console.log(rand([50, 40]))
+console.log(rand([155]))
+console.log(rand([,10]))
+console.log(rand([]))
+
+Aritméticos:
+Operam em cima de 2 operandos
++, -, *, /, %
+
+Relacionais:
+Sempre será verdadeiro ou falso
+== igual
+=== extritamente igual // leva o tipo também em consideração
+!= diferente
+
+Lógicos:
+e, ou, ou exclusivo, não
+ou exclusivo
+v xor v = f
+v xor f = v
+f xor v = v
+f xor f = f
+&&, ||, !=, !
+Quando omite a chave do objeto, o js(a partir do ecmascrypt 2015, já cria sozinho )
+
+Operadores lógicos e função, com objeto:
+function compras(trabalho1 , trabalho2){
+    const comprarSorvete = trabalho1 || trabalho2 // ou
+    const comprarTv50 = trabalho1 && trabalho2 //e
+    const comprarTv32 = !!(trabalho1 ^ trabalho2)
+    //const comprarTv32 = !!(trabalho1 ^ trabalho2) //ou exclusivo
+    const comprarTv32 = trabalho1 != trabalho2 //ou exclusivo
+    const manterSaudavel = !comprarSorvete // operador unário
+    return {comprarSorvete, comprarTv50, comprarTv32, manterSaudavel}
+}
+console.log(compras(true, true))
+console.log(compras(true, false))
+console.log(compras(false, true))
+console.log(compras(false, false))
+
+Unários:
+++numero1 // ordem de precedência maior | soma 1 numero
+--numero1 // ordem de precedência maior | subtrai 1 numero
+numero1++
+numero1--
+console.log(++num1 === num2--) // da true, por causa da localização dos operadores | não colocar incremento em comparações
+
+Ternário:
+Três operandos
+Pode equivaler a condicionais
+? 'opçãoo 1 se for verdadeiro' : 'opção 2 se for fácil'
+
+Operador ternário em função Arrow:
+const resultado = nota => nota >= 7 ? 'Aprovado' : 'Reprovado'
+console.log(resultado(7.1))
+console.log(resultado(6.1))
+
+Tratamento de erros:
+Try/Catch/throw/finally
+function tratarErroELancar(erro){
+    //throw new erro('...')
+    //throw 10
+    //throw true
+    //throw 'mensagem'
+    throw {
+        nome: erro.name,
+        msg: erro.message
+    }
+}
+function imprimirNomeGritado(obj){
+    try {
+        console.log(obj.name.toUpperCase() + '!!!')    
+    }catch (e) {
+        tratarErroELancar(e)
+    }finally{
+        console.log('final')
+    }
+}
+
+const obj = {nome: 'roberto'}
+imprimirNomeGritado(obj)
+try é um bloco que pode gerar erro, que pode ser tratado por um catch, e por último executa o finally
+
+Estruturas de Controle:
+Condicionais:
+If, else
+Se for só uma sentença de código, não precisa colocar {}
+Não usar ;
+
+If:
+if(nota >= 7){
+        console.log('Aprovado!')        
+    }
+
+Exemplos que dão falso, por isso, não fazem nada:
+function seForVerdadeEuFalo(valor){
+    if(valor){
+        console.log('É verdade...'+ valor)
+    }
+}
+seForVerdadeEuFalo() //não printa
+seForVerdadeEuFalo(null) //não printa
+seForVerdadeEuFalo(undefined) //não printa
+seForVerdadeEuFalo(NaN) //não printa
+seForVerdadeEuFalo('') //não printa
+seForVerdadeEuFalo(0) //não printa
+
+If/Else:
+const imprimirResultado = function(nota){
+    if(nota >= 7){
+        console.log('Aprovado!')
+    }else{
+        console.log('Reprovado!')
+    }
+} 
+imprimirResultado(10)
+imprimirResultado(4)
+imprimirResultado('epa') // Cuidado, como dá falso, ele coloca como reprovado
+
+If/Else if:
+Number.prototype.entre = function (inicio, fim){
+    return this >= inicio && this <= fim
+}
+const impromirResultado = function(nota){
+    if(nota.entre(9, 10)){
+        console.log('quadro de honra!')
+    }else if(nota.entre(7,8.99)){
+        console.log('Aprovado!')
+    }else if(nota.entre(4,6.99)){
+        console.log('Recuperação!')
+    }else if(nota.entre(0, 3.99)){
+        console.log('Reprovado!')
+    }else{
+        console.log('Nota inválida!')
+    }
+    console.log('Fim!')
+}
+impromirResultado(10)
+impromirResultado(8.9)
+impromirResultado(6.55)
+impromirResultado(2.3)
+impromirResultado(-1)
+impromirResultado(11)
+
+Switch:
+Dentro do case não precisa definir bloco. Pode-se usar a mesma sentença em 2 ou mais cases, sem precisar repetir a sentença
+Usa o break para ele não precisar entrar nos outros casos
+
+switch:
+const imprimirResultado = function(nota){
+    switch (Math.floor(nota)){ // Arredonda para baixo
+        case 10: // case 10 e 9, não precisa repetir a sentença
+        case 9:
+            console.log('Quadro de Honra!')
+            break // Para ele não precisar entrar nos outros casos
+        case 8: case 7: // Outro modelo
+            console.log('Aprovado')
+            break
+        case 6: case 5: case 4:
+            console.log('Recuperação')
+            break
+        case 3: case 2: case 1: case 0:
+            console.log('Reprovado')
+            break
+        default:
+            console.log('Nota inválida')                 
+    }
+}
+imprimirResultado(10)
+imprimirResultado(8.9)
+imprimirResultado(6.55)
+imprimirResultado(2.3)
+imprimirResultado(-1)
+imprimirResultado(11)
+
+Estruturas de Repetição:
+While:
+Usado quando não tem uma quantidade exata de repetições
+
+while:
+function getInteiroAleatorioEntre(min, max){
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor)
+}
+let opcao = 0
+while(opcao != -1){
+    opcao = getInteiroAleatorioEntre(-1, 10)
+    console.log(`A opção escolhida foi: ${opcao}`)
+}
+console.log('Fim')
+
+do while:
+function getInteiroAleatorioEntre(min, max){
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor)
+}
+let opcao //não precisa colocar o valor
+do {
+    opcao = getInteiroAleatorioEntre(-1, 10)
+    console.log(`A opção escolhida foi: ${opcao}`)
+} while (opcao != -1)
+console.log('Fim')
+
+For:
+Primeiro vem a declaração; depois vem a expressão que vai dixer se ele continua ou não no laço; depois vem o incremento
+for (let i = 1; i <= 10; i++ ){
+    console.log(`Contador = ${i}`)
+}
+
+For no array:
+const notas = [6.7, 7.4, 9.8, 8.1, 7.7]
+for (i = 0; i < notas.length; i++){
+    console.log('Notas = '+notas[i])
+}
+
+For in:
+Vai dar os índices do array
+for(índice i em notas)
+
+For in no array:
+const notas = [6.7, 7.4, 9.8, 8.1, 7.7]
+for(let i in notas) {
+    console.log('Índice ' + i + ' recebe o valor ' + notas[i])
+}
+
+For in no objeto:
+const pessoa = {
+    nome: 'Ana',
+    sobrenome: 'Silva',
+    idade: 29,
+    peso: 64
+}
+for (let atributo in pessoa){
+    console.log(`${atributo} = ${pessoa[atributo]}`)
+}/* O exemplo acima, de uma forma mais fácil de entender. o for in de objeto funciona da mesma forma que no array
+for(let i in pessoa) {
+    console.log('atributo ' + i + ' recebe o valor ' + pessoa[i])
+}
+*/
+
+Break/continue:
+Causam desvio de fluxo
+Brake influencia no switch, for, while
+continue influencia no for, while
+devemos evitar o usado 
+
+Break:
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for (let x in nums){
+    if(x == 5){ //quando for 5 ele para
+        break // Não age no if, age no bloco mais próximo dele, no caso o for
+    }
+    console.log (`${x} = ${nums[x]}`)
+}
+
+Continue:
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for (y in nums){ 
+    if (y==5) continue //ele interrompe essa posição, e pula pra próxima
+    console.log(`${y} = ${nums[y]}`)
+}
+
+Rótulo: //Não se usa. Pode ser na mesma linha ou na linha de cima
+externo: for (a in nums) {
+    for (b in nums){
+        if( a == 2 && b == 3) break externo
+        console.log(`par = ${a},${b}`)
+    }
+}
+
+Função
+
+Cidadão de Primeira Linha:
+Pode tratar função como um dado
+Função de alta ordem
+
+função literal:
+function fun1() { }
+
+função em variavel:
+const fun2 = function () {}
+
+função no array:
+const array = [function(a,b) {return a+b}, fun1, fun2]
+console.log(array[0](2,3))
+
+Armazenar em um atributo de objeto:
+const obj = {}
+obj.falar = function(){ return 'OPA'}
+console.log(obj.falar())
+
+função como parâmetro de outra função:
+function run (fun) {
+    fun()
+}
+run(function ( ){ console.log('Executando...')})
+
+uma função pode retornar/conter uma função:
+function soma(a,b){
+    return function(c){
+        console.log(a+b+c)
+    }
+} 
+soma(2,3)(4) 
+ou 
+const cincomais = soma(2,3)
+cincomais(4)
+
+Parâmetros e retornos são opcionais
+Função sem parâmetros
+Arguments é um array interno da função, que faz com que não precise de parâmetros
+
+Arguments:
+function soma(){
+    let soma = 0
+    for (i in arguments){
+        soma += arguments[i]
+    }
+    return soma
+}
+console.log(soma())
+console.log(soma(1))
+console.log(soma(1.1,2.2,3.3))
+
+Parâmetro padrão
+
+Estrategia 1 de gerar valor padrão :
+function soma1 (a, b, c) {
+    a = a || 1
+    b = b || 1
+    c = c || 1
+    return a + b + c
+}
+console.log(soma1())
+console.log(soma1(), soma1(3))
+console.log(soma1(), soma1(3), soma1(1, 2, 3))
+console.log(soma1(), soma1(3), soma1(1, 2, 3), soma1(0, 0, 0))
+
+Estrategias 2, 3 e 4: 
+function soma2(a, b, c) {
+    a = a !== undefined ? a : 1
+    b = 1 in arguments ? b : 1 // não esquecer de mudar o índice
+    c = isNaN(c) ? 1 : c
+    return a+b+c
+}
+console.log(soma2())
+console.log(soma2(), soma2(3))
+console.log(soma2(), soma2(3), soma2(1,2,3))
+console.log(soma2(), soma2(3), soma2(1,2,3), soma2(0,0,0))
+
+No novo ecmascrypt 2015:
+function soma3(a = 1,b = 1, c = 1){
+    return a+b+c
+}
+console.log(soma3())
+console.log(soma3(), soma3(3))
+console.log(soma3(), soma3(3), soma3(1,2,3))
+console.log(soma3(), soma3(3), soma3(1,2,3), soma3(0,0,0))
+
+sorteio
+
+This
+
+O This pode variar:
+Em outras linguagens pode ser self 
+Varia dependendo da forma que chama a função
+Na função arrow o this não varia
+
+This e Bind:
+O bind passa um objeto no qual eu quero que seja resolvido o this
+
+Uso do bind:
+const pessoa = {saudacao: 'Bom dia', falar(){console.log(this.saudacao)}}
+pessoa.falar()
+const falar = pessoa.falar
+falar() // conflito entre programação funcional e oo
+const falarDePessoa = pessoa.falar.bind(pessoa)
+
+
+
+
+
